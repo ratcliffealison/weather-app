@@ -1,5 +1,6 @@
 
 import './App.css';
+import Footer from "./Footer.js"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         Hello World
 
       </header>
+      <Footer />
     </div>
   );
 }
