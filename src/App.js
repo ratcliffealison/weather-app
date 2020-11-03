@@ -4,12 +4,16 @@ import Footer from "./Footer.js"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Hello World
-
-      </header>
+    <div className="App ">
+      <div className=" container">
+      <div className="row"><p>
+        paragraph
+        </p></div>
+         <div className="row"><p>
+        paragraph
+        </p></div>
       <Footer />
+    </div>
     </div>
   );
 }
