@@ -1,6 +1,33 @@
 input {
   font-family: "Dosis", sans-serif;
-  margin: 1px;
-  box-shadow: 2px 3px #e9b9b9;
   margin: 10px;
+  box-shadow: 2px 3px #e9b9b9;
+}
+.Weather h1 {
+  font-size: 50px;
+  font-weight: 200;
+  line-height: 28.8px;
+  display: block;
+
+  color: #7e7e7e;
+}
+
+.Weather ul {
+  color: #7e7e7e;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.Weather .temperature {
+  font-weight: bold;
+  font-size: 100px;
+  font-weight: 400;
+}
+.Weather img {
+  float: left;
+  margin: 10px;
+  height: 100px;
+}
+.Weather .unit {
+  font-size: 30px;
 }
