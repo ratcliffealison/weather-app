@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./Weather.css"
 import axios from "axios"
+import TimeAndDate from "./TimeAndDate.js";
 
 export default function Weather() {
 const [weatherData, setWeatherData] = useState({ready: false} )
@@ -44,16 +45,7 @@ function handleResponse(response) {
                         <h1>{weatherData.city}</h1>
                         <h3 className="description text-capitalize">{weatherData.description}</h3>
                     </div>    
-                    <div className="col-6 timeDate">
-                         <ul>
-                             <li>
-                             12:56
-                             </li>
-                            <li>
-                            Tuesday 3rd November
-                            </li>
-                        </ul>
-                    </div> 
+                    <TimeAndDate />
                 </div>
 
            
@@ -76,7 +68,7 @@ function handleResponse(response) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     
     axios.get(apiUrl).then(handleResponse);
-    return "loading"
+    return "Loading..."
   
 
         }
