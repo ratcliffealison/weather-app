@@ -8,7 +8,6 @@ input {
   font-weight: 200;
   line-height: 28.8px;
   display: block;
-
   color: #7e7e7e;
 }
 
@@ -16,6 +15,7 @@ input {
   color: #7e7e7e;
   list-style-type: none;
   font-size: 20px;
+  padding: 0px;
 }
 
 .Weather .temperature {
@@ -25,7 +25,6 @@ input {
 }
 .Weather img {
   float: left;
-  margin: 10px;
   height: 100px;
 }
 .Weather .unit {

@@ -61,10 +61,10 @@ export default function TimeAndDate() {
                 <div className="TimeAndDate col-6">
                          <ul>
                              <li>
-                             {formatDate()}
+                            {formatTime()}
                              </li>
                             <li>
-                            {formatTime()}
+                             {formatDate()}
                             </li>
                         </ul>
                     </div>
