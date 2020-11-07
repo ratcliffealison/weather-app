@@ -60,7 +60,7 @@ setCity(event.target.value)
         </div>
     )
         } else {
-  search();
+    search();
     return "Loading..."
 
 

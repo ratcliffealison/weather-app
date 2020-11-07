@@ -1,5 +1,6 @@
 import React from "react"
 import TimeAndDate from "./TimeAndDate.js";
+import CurrentTemperature from "./CurrentTemperature.js"
 export default function WeatherInfo(props) {
 
     return (   
@@ -7,10 +8,8 @@ export default function WeatherInfo(props) {
             <div className="row ml-2">
                 <div className="col-6">
                    <img src={props.data.iconUrl} alt={props.data.description}/>
-
-                    <span className="temperature">{props.data.temperature}</span>
-                    <span className="unit"><a className="metric">ºC</a></span> |
-                    <span className="unit"><a className="imperial"> ºF</a></span>
+                   <CurrentTemperature celciusTemp={props.data.temperature} />
+                   
                 </div> 
                 <div className="col-6 ">
                  <ul>
