@@ -1,5 +1,6 @@
 import React from "react"
 import TimeAndDate from "./TimeAndDate.js";
+import WeatherIcon from "./WeatherIcon.js"
 import CurrentTemperature from "./CurrentTemperature.js"
 export default function WeatherInfo(props) {
 
@@ -7,12 +8,14 @@ export default function WeatherInfo(props) {
         <div className="WeatherInfo"> 
             <div className="row ml-2">
                 <div className="col-6">
-                   <img src={props.data.iconUrl} alt={props.data.description}/>
+                   <WeatherIcon code={props.data.icon}  />
                    <CurrentTemperature celciusTemp={props.data.temperature} />
                    
                 </div> 
                 <div className="col-6 ">
                  <ul>
+                     <br/>
+                     
                     <li>
                      Humidity: {props.data.humidity}%
                     </li>

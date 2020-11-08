@@ -1,0 +1,15 @@
+.WeatherForecast {
+  text-align: center;
+  display: block;
+  margin: 10px 5px;
+  background-color: white;
+  font-size: 25px;
+  color: #7e7e7e;
+}
+
+.WeatherForecast canvas {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+}

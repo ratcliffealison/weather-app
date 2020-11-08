@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import "./Weather.css"
 import axios from "axios"
-
+import LoadingSpinner from "./LoadingSpinner.js"
 import WeatherInfo from "./WeatherInfo"
+import WeatherForecast from "./WeatherForecast.js"
 
 export default function Weather(props) {
 const [weatherData, setWeatherData] = useState({ready: false} )
@@ -17,7 +18,7 @@ function handleResponse(response) {
         humidity: response.data.main.humidity,
         wind: Math.round(response.data.wind.speed),
         description: response.data.weather[0].description,
-        iconUrl: "www.google.com"
+        icon: response.data.weather[0].icon
     })
    
 }
@@ -30,9 +31,11 @@ function search() {
     axios.get(apiUrl).then(handleResponse);
 }
 
+
 function handleSearchSubmit(event){
 event.preventDefault();
 search(city)
+
 }
 
 function handleCityChange(event) {
@@ -42,26 +45,31 @@ setCity(event.target.value)
         return (
         <div className="Weather">
            
-           <WeatherInfo data={weatherData}/>
-                    <form onSubmit={handleSearchSubmit}>
-                 <div className="row">
-                     <div className="col-9">
+            <WeatherInfo data={weatherData}/>
+            <WeatherForecast city={weatherData.city} />
+           
+                    <form id="search-form" onSubmit={handleSearchSubmit}>
+                        <div className="row">
+                            <div className="col-9">
                     <input 
                     type ="search" 
                     placeholder="Enter a city" 
                     className="form-control" 
                     onChange={handleCityChange}/>
-                    </div>
-                    <div className="col-3"><input type="submit" value="Search" className="btn btn-primary" />
-                    </div>
-                 </div>
+                            </div>
+                            <div className="col-3">
+                                <input type="submit" value="Search" className="btn btn-primary" />
+                            </div>
+                        </div>
                     </form> 
              
         </div>
     )
         } else {
     search();
-    return "Loading..."
+    return (
+        <LoadingSpinner />
+    )
 
 
         }
