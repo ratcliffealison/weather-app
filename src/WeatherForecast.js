@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./WeatherForecast.css"
-
 import WeatherForecastPreview from "./WeatherForecastPreview.js"
 
 
@@ -19,7 +18,7 @@ function handleForecastResponse(response) {
              return (
                 <div className="row">
                     {forecast.list.slice(0, 6).map(function (forecastItem) {
-                        return <WeatherForecastPreview data={forecastItem} />;
+                        return <WeatherForecastPreview data={forecastItem} />
                     })}
         
                 </div> )
