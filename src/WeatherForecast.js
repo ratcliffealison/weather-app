@@ -24,7 +24,7 @@ function handleForecastResponse(response) {
                 </div> )
     } else {
             let apiKey ="c1839181c76825494afbe0248f476ab5"
-            let apiUrl =`http://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`
+            let apiUrl =`https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`
                 axios.get(apiUrl).then(handleForecastResponse)
 
    return null
